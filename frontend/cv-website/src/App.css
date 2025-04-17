@@ -1,0 +1,324 @@
+/* App.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Jersey 25', sans-serif; 
+  font-size: 25px;
+}
+
+.animate-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Animation für das Einblenden */
+.animate-in {
+  opacity: 1;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Kreismenü-Grundstil */
+.circle-menu {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Einfaches Einblenden für das Kreismenü */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #242424;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* Navigation Header */
+.nav-header {
+  position: fixed;
+  top: -80px; /* Höhe des Headers, hier z.B. 80px – passe diesen Wert an */
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease;
+}
+
+/* Ein schmaler Bereich oben, der als Hover-Trigger dient */
+.nav-trigger {
+  position: fixed;
+  top: 20;
+  left: 0;
+  width: 100%;
+  height: 70px; /* Minimalhöhe für den Hover-Zone */
+  z-index: 49;
+  /* Kann transparent sein, damit er die Optik nicht stört */
+}
+
+/* Sobald der Trigger oder der Header selbst gehoved wird, fährt der Header nach unten */
+.nav-trigger:hover + .nav-header,
+.nav-header:hover {
+  top: 0;
+}
+
+/* Optional: Styling für den Inhalt des Headers */
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.nav-item {
+  color: white;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.2s;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.nav-item.active {
+  text-decoration: underline;
+}
+
+/* Landing Page */
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container-greeting{
+  display: inline-block;
+  z-index: 10;
+  position: absolute;
+  top: 35%;
+}
+
+.container-greeting-mainPage{
+  display: inline-block;
+  z-index: 10;
+}
+
+.greeting {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 32px;
+  text-align: center;
+  border-right: 3px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typing 2s steps(17),
+    cursor .4s step-end infinite alternate;
+}
+@keyframes cursor{
+  50% {border-color: transparent;}
+}
+
+@keyframes typing{
+ from{width: 0;}
+}
+
+.profile-container {
+  position: relative;
+}
+
+.press-me {
+  position: absolute;
+  left: -128px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.arrow-white {
+  width: 60px;
+  height: 30px;
+  margin-right: 1000px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.arrow {
+  margin-left: 8px;
+  font-size: 24px;
+}
+
+.profile-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+.circle-menu {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-menu-item {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+
+}
+
+.circle-menu-item:hover {
+  text-decoration: underline;
+
+}
+
+/* Content Area */
+.content-container {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+  animation: fadeIn 0.5s forwards;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 48px 0;
+}
+
+.content-profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.section {
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.section-text {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.academic-items, 
+.project-items,
+.contact-items {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.academic-item, 
+.project-item,
+.contact-item {
+  margin-bottom: 16px;
+}
+
+.item-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.tech-container {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 16px;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.tech-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.github-link {
+  text-align: center;
+}
+
+.github-link a {
+  color: white;
+  text-decoration: underline;
+}
+.print-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+}
+.print-cv{
+  align-self: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
