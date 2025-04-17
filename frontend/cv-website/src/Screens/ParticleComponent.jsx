@@ -4,12 +4,10 @@ import { loadLinksPreset } from "tsparticles-preset-links";
 
 const ParticlesComponent = () => {
   const particlesInit = useCallback(async (engine) => {
-    // Diese Funktion wird aufgerufen, wenn die Particles-Instanz initialisiert wird
     await loadLinksPreset(engine);
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {
-    // Diese Funktion wird aufgerufen, wenn die Particles-Container geladen sind
     console.log("Particles container loaded", container);
   }, []);
 
@@ -25,7 +23,6 @@ const ParticlesComponent = () => {
             value: "#000000",
           },
         },
-        // Sie können hier zusätzliche Optionen anpassen
         particles: {
           number: {
             value: 80,

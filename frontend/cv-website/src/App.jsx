@@ -7,31 +7,51 @@ function App() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  // Neue States für Animation
   const [animatingOut, setAnimatingOut] = useState(false);
   const [animatingIn, setAnimatingIn] = useState(false);
   
+ 
+  const [expandedProjects, setExpandedProjects] = useState({
+    project1: false,
+    project2: false,
+    project3: false
+  });
+  
+ 
+  const projectDetails = {
+    project1: "S&P Companies Analytics Dashboard: A comprehensive financial analytics dashboard built with Dash that analyzes companies from the S&P 100 index. The application features customized company selection, historical price analysis since 2021, and CAPM (Capital Asset Pricing Model) coefficient calculations. The dashboard includes visualization of daily returns compared to the S&P 500 benchmark, along with company metadata such as employee count, sector classification, market capitalization, and corporate identity information. This project demonstrates strong capabilities in financial data processing, statistical analysis, and interactive data visualization.",
+    project2: "The building and space management system is a React-based web application designed to efficiently oversee facility resources. It features an intuitive interface for room booking, maintenance scheduling, and occupancy monitoring. The system includes interactive floor plans, real-time availability updates, and comprehensive reporting tools. Its successful implementation earned a perfect grade by delivering exceptional user experience combined with robust backend functionality.",
+    project3: "Marketplace App: A fully functional mobile marketplace application developed using React Native with Firebase as the backend. The app allows users to post items for sale, browse listings with advanced filtering options, communicate with sellers through an integrated messaging system, and manage their personal inventory. Features include image uploading, location-based search, push notifications, and secure user authentication. This personal project demonstrates practical knowledge of mobile development, real-time databases, and user-centered design principles."
+  };
+  const github_projectDetails ={
+    project1: "https://github.com/einfachManu/DataAnalysisProjekt", 
+    project2: "https://github.com/Wirtschaftsinformatik-Passau/gebaeudeverwaltung-gruppe-3-WS2425",
+    project3: "https://github.com/einfachManu/Brandspace"
+  }
+
+  const toggleProjectDetails = (projectId) => {
+    setExpandedProjects(prev => ({
+      ...prev,
+      [projectId]: !prev[projectId]
+    }));
+  };
+  
   const handleProfileClick = () => {
     if (!menuVisible) {
-      // Erst ausblenden Animation starten
       setAnimatingOut(true);
       
-      // Nach der Ausblend-Animation das Menü einblenden
       setTimeout(() => {
         setMenuVisible(true);
         setAnimatingOut(false);
         setAnimatingIn(true);
         
-        // Animation abschließen
         setTimeout(() => {
           setAnimatingIn(false);
         }, 500);
       }, 300);
     } else {
-      // Menü ausblenden
       setAnimatingOut(true);
       
-      // Nach der Animation zurücksetzen
       setTimeout(() => {
         setMenuVisible(false);
         setAnimatingOut(false);
@@ -67,7 +87,6 @@ function App() {
     { id: 'technologies', text: 'Technologies' },
     { id: 'contact', text: 'Contact Information' },
     { id: 'github', text: 'Github' },
-    { id: 'leetcode', text: 'Leetcode'}
   ];
   
   const circleMenuItems = [
@@ -155,9 +174,7 @@ function App() {
       {contentVisible && (
         <div className="content-container">
           <div className="profile-header">
-            <div className={`container-greeting-mainPage`}> 
-              <h1 className="greeting">Hi, i am Manuel !</h1>
-            </div>
+            <h1 className="greeting">Hi, i am Manuel !</h1>
             <img
               src="../src/images/ProfilPicture.jpg"
               alt="Profile"
@@ -175,10 +192,6 @@ function App() {
           <section id="academic" className="section">
             <h2 className="section-title">Academic Career</h2>
             <div className="academic-items">
-              <div className="academic-item">
-                <h3 className="item-title">2022-now</h3>
-                <p>Bachelor Business informatics (University of Passau)</p>
-              </div>
               <div className="academic-item">
                 <h3 className="item-title">2021-2022</h3>
                 <p>Bachelor Information Systems (University of Passau)</p>
@@ -199,12 +212,54 @@ function App() {
             <div className="project-items">
               <div className="project-item">
                 <p>Data Analysis and Digital Reporting Project in Python (Grade: 1.7)</p>
+                <button 
+                  className="see-more-btn" 
+                  onClick={() => toggleProjectDetails('project1')}
+                >
+                  {expandedProjects.project1 ? 'See less' : 'See more'}
+                </button>
+                {expandedProjects.project1 && (
+                  <div className="project-details">
+                    <p>{projectDetails.project1}</p>
+                    <a href= {github_projectDetails.project1} target="_blank" rel="noopener noreferrer">
+                      {github_projectDetails.project1}
+                    </a>
+                  </div>
+                )}
               </div>
               <div className="project-item">
                 <p>Building and space management system (React) (Grade: 1.0)</p>
+                <button 
+                  className="see-more-btn" 
+                  onClick={() => toggleProjectDetails('project2')}
+                >
+                  {expandedProjects.project2 ? 'See less' : 'See more'}
+                </button>
+                {expandedProjects.project2 && (
+                  <div className="project-details">
+                    <p>{projectDetails.project2}</p>
+                    <a href= {github_projectDetails.project2} target="_blank" rel="noopener noreferrer">
+                      {github_projectDetails.project2}
+                    </a>
+                  </div>
+                )}
               </div>
               <div className="project-item">
                 <p>Private Project: Advertising Marketplace (React Native, Firebase)</p>
+                <button 
+                  className="see-more-btn" 
+                  onClick={() => toggleProjectDetails('project3')}
+                >
+                  {expandedProjects.project3 ? 'See less' : 'See more'}
+                </button>
+                {expandedProjects.project3 && (
+                  <div className="project-details">
+                    <p>{projectDetails.project3}</p>
+                    <a href= {github_projectDetails.project3} target="_blank" rel="noopener noreferrer">
+                      {github_projectDetails.project3}
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </section>
@@ -236,10 +291,6 @@ function App() {
                 <img src='../src/images/CSS.png' className="tech-icon"/>
                 <span>CSS</span>
               </div>
-              <div className="tech-item">
-                <img src='../src/images/icons8-figma-50.png' className="tech-icon"/>
-                <span>Figma</span>
-              </div>
             </div>
           </section>
           
@@ -263,16 +314,6 @@ function App() {
               </a>
             </div>
           </section>
-
-          <section id="leetcode" className="section">
-            <h2 className="section-title">Leetcode</h2>
-            <div className="github-link">
-              <a href="https://leetcode.com/einfachManu_/" target="_blank" rel="noopener noreferrer">
-                https://leetcode.com/einfachManu_/
-              </a>
-            </div>
-          </section>
-
           <div className="print-container">
             <button 
             className='print-cv'
