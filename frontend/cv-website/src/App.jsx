@@ -193,6 +193,10 @@ function App() {
             <h2 className="section-title">Academic Career</h2>
             <div className="academic-items">
               <div className="academic-item">
+                <h3 className="item-title">2022-now</h3>
+                <p>Bachelor Business informatics (University of Passau)</p>
+              </div>
+              <div className="academic-item">
                 <h3 className="item-title">2021-2022</h3>
                 <p>Bachelor Information Systems (University of Passau)</p>
               </div>
@@ -290,6 +294,10 @@ function App() {
               <div className="tech-item">
                 <img src='../src/images/CSS.png' className="tech-icon"/>
                 <span>CSS</span>
+              </div>
+              <div className="tech-item">
+                <img src='../src/images/icons8-figma-50.png' className="tech-icon"/>
+                <span>Figma</span>
               </div>
             </div>
           </section>
