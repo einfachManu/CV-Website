@@ -14,19 +14,22 @@ function App() {
   const [expandedProjects, setExpandedProjects] = useState({
     project1: false,
     project2: false,
-    project3: false
+    project3: false,
+    project4: false
   });
   
  
   const projectDetails = {
     project1: "S&P Companies Analytics Dashboard: A comprehensive financial analytics dashboard built with Dash that analyzes companies from the S&P 100 index. The application features customized company selection, historical price analysis since 2021, and CAPM (Capital Asset Pricing Model) coefficient calculations. The dashboard includes visualization of daily returns compared to the S&P 500 benchmark, along with company metadata such as employee count, sector classification, market capitalization, and corporate identity information. This project demonstrates strong capabilities in financial data processing, statistical analysis, and interactive data visualization.",
     project2: "The building and space management system is a React-based web application designed to efficiently oversee facility resources. It features an intuitive interface for room booking, maintenance scheduling, and occupancy monitoring. The system includes interactive floor plans, real-time availability updates, and comprehensive reporting tools. Its successful implementation earned a perfect grade by delivering exceptional user experience combined with robust backend functionality.",
-    project3: "Marketplace App: A fully functional mobile marketplace application developed using React Native with Firebase as the backend. The app allows users to post items for sale, browse listings with advanced filtering options, communicate with sellers through an integrated messaging system, and manage their personal inventory. Features include image uploading, location-based search, push notifications, and secure user authentication. This personal project demonstrates practical knowledge of mobile development, real-time databases, and user-centered design principles."
+    project3: "Marketplace App: A fully functional mobile marketplace application developed using React Native with Firebase as the backend. The app allows users to post items for sale, browse listings with advanced filtering options, communicate with sellers through an integrated messaging system, and manage their personal inventory. Features include image uploading, location-based search, push notifications, and secure user authentication. This personal project demonstrates practical knowledge of mobile development, real-time databases, and user-centered design principles.",
+    project4: "As part of a university project, I led the end‑to‑end design of an intelligent chatbot in Figma. I began by crafting detailed user personas, defining key use cases, and mapping user scenarios to understand real needs. Through targeted surveys, I gathered qualitative and quantitative insights, then translated them into comprehensive user‑journey maps. Building on this research, I created both low‑fidelity wireframes and high‑fidelity interactive prototypes, iterating quickly to validate design decisions. This hands‑on experience sharpened my user‑centered design skills, reinforced my ability to synthesize user feedback into functional interfaces, and delivered a polished chatbot prototype ready for development."
   };
   const github_projectDetails ={
     project1: "https://github.com/einfachManu/DataAnalysisProjekt", 
     project2: "https://github.com/Wirtschaftsinformatik-Passau/gebaeudeverwaltung-gruppe-3-WS2425",
-    project3: "https://github.com/einfachManu/Brandspace"
+    project3: "https://github.com/einfachManu/Brandspace", 
+    project4: "https://www.youtube.com/watch?v=I_8vJnLs0RM"
   }
 
   const toggleProjectDetails = (projectId) => {
@@ -249,7 +252,7 @@ function App() {
                 )}
               </div>
               <div className="project-item">
-                <p>Private Project: Advertising Marketplace (React Native, Firebase)</p>
+                <p>Private Project: Advertising Marketplace (React Native, Firebase, Figma)</p>
                 <button 
                   className="see-more-btn" 
                   onClick={() => toggleProjectDetails('project3')}
@@ -261,6 +264,23 @@ function App() {
                     <p>{projectDetails.project3}</p>
                     <a href= {github_projectDetails.project3} target="_blank" rel="noopener noreferrer">
                       {github_projectDetails.project3}
+                    </a>
+                  </div>
+                )}
+              </div>
+              <div className="project-item">
+                <p>Chatbot design Project (Figma) (Grade: 1.3)</p>
+                <button 
+                  className="see-more-btn" 
+                  onClick={() => toggleProjectDetails('project4')}
+                >
+                  {expandedProjects.project4 ? 'See less' : 'See more'}
+                </button>
+                {expandedProjects.project4 && (
+                  <div className="project-details">
+                    <p>{projectDetails.project4}</p>
+                    <a href= {github_projectDetails.project4} target="_blank" rel="noopener noreferrer">
+                      {github_projectDetails.project4}
                     </a>
                   </div>
                 )}
