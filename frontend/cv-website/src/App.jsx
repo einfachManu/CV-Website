@@ -342,6 +342,14 @@ function App() {
               </a>
             </div>
           </section>
+          <section id="github" className="section">
+            <h2 className="section-title">leetcode</h2>
+            <div className="github-link">
+              <a href="https://leetcode.com/einfachManu_/" target="_blank" rel="noopener noreferrer">
+                https://leetcode.com/einfachManu_/
+              </a>
+            </div>
+          </section>
           <div className="print-container">
             <button 
             className='print-cv'
