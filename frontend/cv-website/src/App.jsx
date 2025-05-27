@@ -3,6 +3,17 @@ import './App.css';
 import ProfilPic from "../src/images/ProfilPicture.jpg"
 import ParticlesComponent from './Screens/ParticleComponent';
 import resume from './assets/Lebenslauf_Manuel_Schwarz.pdf';
+
+import pythonLogo from "../src/images/javascriptLogo.png";
+import javaScriptLogo from "../src/images/javascriptLogo.png";
+import javaLogo from "../src/images/javascriptLogo.png";
+import reactLogo from "../src/images/javascriptLogo.png";
+import HTMLLogo from "../src/images/javascriptLogo.png";
+import CssLogo from "../src/images/javascriptLogo.png";
+import FigmaLogo from "../src/images/javascriptLogo.png";
+
+
+
 function App() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
@@ -328,7 +339,7 @@ function App() {
             <h2 className="section-title">Technologies</h2>
             <div className="tech-container">
               <div className="tech-item">
-                <img src='../src/images/pythonLogo.png' className="tech-icon"/>
+                <img src={pythonLogo} className="tech-icon"/>
                 <span>Python</span>
               </div>
               <div className="tech-item">
