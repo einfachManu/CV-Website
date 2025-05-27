@@ -5,7 +5,7 @@ import ParticlesComponent from './Screens/ParticleComponent';
 import resume from './assets/Lebenslauf_Manuel_Schwarz.pdf';
 
 import profilePicture from "../src/images/ProfilPicture.jpg"
-import Arrow from "{profilePicture}"
+import Arrow from "../src/images/Arrow-white.png"
 
 import pythonLogo from "../src/images/javascriptLogo.png";
 import javaScriptLogo from "../src/images/javascriptLogo.png";
