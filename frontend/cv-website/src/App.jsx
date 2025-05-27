@@ -7,13 +7,13 @@ import resume from './assets/Lebenslauf_Manuel_Schwarz.pdf';
 import profilePicture from "../src/images/ProfilPicture.jpg"
 import Arrow from "../src/images/Arrow-white.png"
 
-import pythonLogo from "../src/images/javascriptLogo.png";
+import pythonLogo from "../src/images/pythonLogo.png";
 import javaScriptLogo from "../src/images/javascriptLogo.png";
-import javaLogo from "../src/images/javascriptLogo.png";
-import reactLogo from "../src/images/javascriptLogo.png";
-import HTMLLogo from "../src/images/javascriptLogo.png";
-import CssLogo from "../src/images/javascriptLogo.png";
-import FigmaLogo from "../src/images/javascriptLogo.png";
+import javaLogo from "../src/images/Java.png";
+import reactLogo from "../src/images/reactNative.png";
+import HTMLLogo from "../src/images/HTML.png";
+import CssLogo from "../src/images/Css.png";
+import FigmaLogo from "../src/images/icons8-figma-50.png";
 
 
 
@@ -355,7 +355,7 @@ function App() {
                 <span>Java</span>
               </div>
               <div className="tech-item">
-                <img src={javaLogo} className="tech-icon"/>
+                <img src={reactLogo} className="tech-icon"/>
                 <span>React/React Native</span>
               </div>
               <div className="tech-item">
