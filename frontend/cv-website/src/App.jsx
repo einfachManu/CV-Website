@@ -18,11 +18,14 @@ function App() {
     project4: false
   });
   
+  const [currentProjects, setCurrentProjects] = useState({
+    project1: false,
+  });
  
   const projectDetails = {
     project1: "S&P Companies Analytics Dashboard: A comprehensive financial analytics dashboard built with Dash that analyzes companies from the S&P 100 index. The application features customized company selection, historical price analysis since 2021, and CAPM (Capital Asset Pricing Model) coefficient calculations. The dashboard includes visualization of daily returns compared to the S&P 500 benchmark, along with company metadata such as employee count, sector classification, market capitalization, and corporate identity information. This project demonstrates strong capabilities in financial data processing, statistical analysis, and interactive data visualization.",
     project2: "The building and space management system is a React-based web application designed to efficiently oversee facility resources. It features an intuitive interface for room booking, maintenance scheduling, and occupancy monitoring. The system includes interactive floor plans, real-time availability updates, and comprehensive reporting tools. Its successful implementation earned a perfect grade by delivering exceptional user experience combined with robust backend functionality.",
-    project3: "Marketplace App: A fully functional mobile marketplace application developed using React Native with Firebase as the backend. The app allows users to post items for sale, browse listings with advanced filtering options, communicate with sellers through an integrated messaging system, and manage their personal inventory. Features include image uploading, location-based search, push notifications, and secure user authentication. This personal project demonstrates practical knowledge of mobile development, real-time databases, and user-centered design principles.",
+    project3: "Marketplace App: A fully functional mobile marketplace application developed using React Native with Firebase as the backend.",
     project4: "As part of a university project, I led the end‑to‑end design of an intelligent chatbot in Figma. I began by crafting detailed user personas, defining key use cases, and mapping user scenarios to understand real needs. Through targeted surveys, I gathered qualitative and quantitative insights, then translated them into comprehensive user‑journey maps. Building on this research, I created both low‑fidelity wireframes and high‑fidelity interactive prototypes, iterating quickly to validate design decisions. This hands‑on experience sharpened my user‑centered design skills, reinforced my ability to synthesize user feedback into functional interfaces, and delivered a polished chatbot prototype ready for development."
   };
   const github_projectDetails ={
@@ -30,6 +33,10 @@ function App() {
     project2: "https://github.com/Wirtschaftsinformatik-Passau/gebaeudeverwaltung-gruppe-3-WS2425",
     project3: "https://github.com/einfachManu/Brandspace", 
     project4: "https://www.youtube.com/watch?v=I_8vJnLs0RM"
+  }
+  const currentWork = {
+    project1: "The opacity linked to black-box Artificial Intelligence (AI) models (such as Deep Learning) gave rise to the development of Explainable AI (XAI) methods, which aim at explaining the AI model outputs to humans and thus serve different AI stakeholder groups, such as developers, decision-makers or impacted groups and individuals. However, some authors raise concerns about the validity of XAI results.In light of this, the seminar thesis shall investigate the literature on XAI validity. The goal of the thesis is thus to provide a structured overview on the current state of the literature, e.g. in the form of a conceptual framework. Here it should, inter alia, shed light on key challenges and limitations of XAI methods and provide a starting point for XAI researchers that want to evaluate their XAI tools and avoid common pitfalls.",
+    project2: "Bot for buying all kind of Stuff"
   }
 
   const toggleProjectDetails = (projectId) => {
@@ -39,6 +46,14 @@ function App() {
     }));
   };
   
+  const toggleCurrentDetails = (projectId) => {
+    setCurrentProjects(prev => ({
+      ...prev,
+      [projectId]: !prev[projectId]
+    }));
+  };
+
+
   const handleProfileClick = () => {
     if (!menuVisible) {
       setAnimatingOut(true);
@@ -87,20 +102,21 @@ function App() {
     { id: 'about', text: 'About me' },
     { id: 'academic', text: 'Academic Career' },
     { id: 'projects', text: 'Projects' },
+    { id: 'current-projects', text: 'Current Projects' },
     { id: 'technologies', text: 'Technologies' },
     { id: 'contact', text: 'Contact Information' },
     { id: 'github', text: 'Github' },
   ];
   
   const circleMenuItems = [
-    { id: 'about', text: 'About me', angle: 0 },
-    { id: 'technologies', text: 'Technologies', angle: 300 },
-    { id: 'projects', text: 'Projects', angle: 60 },
-    { id: 'academic', text: 'Academic career', angle: 120 },
-    { id: 'contact', text: 'Contact Information', angle: 240 },
-    { id: 'github', text: 'Github', angle: 180 },
-  ];
-  
+    { id: 'about',             text: 'About me',               angle: 0.00   },
+    { id: 'current-projects',  text: 'Current Projects',       angle: 51.43  },
+    { id: 'projects',          text: 'Projects',               angle: 102.86 },
+    { id: 'academic',          text: 'Academic career',        angle: 154.29 },
+    { id: 'github',            text: 'Github',                 angle: 205.71 },
+    { id: 'contact',           text: 'Contact Information',    angle: 257.14 },
+    { id: 'technologies',      text: 'Technologies',           angle: 308.57 },
+];
   
   return (
     <div className="app-container">
@@ -288,6 +304,26 @@ function App() {
             </div>
           </section>
           
+          <section id="current-projects" className='section'>
+          <h2 className="section-title">What i am currently working on</h2>
+            <div className="project-items">
+              <div className="project-item">
+                <p>Seminar Thesis: Validity of XAI Result</p>
+                <button 
+                  className="see-more-btn" 
+                  onClick={() => toggleCurrentDetails('project1')}
+                >
+                  {currentProjects.project1 ? 'See less' : 'See more'}
+                </button>
+                {currentProjects.project1 && (
+                  <div className="project-details">
+                    <p>{currentWork.project1}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+
           <section id="technologies" className="section">
             <h2 className="section-title">Technologies</h2>
             <div className="tech-container">
@@ -347,7 +383,7 @@ function App() {
             <div className="github-link">
               <a href="https://leetcode.com/einfachManu_/" target="_blank" rel="noopener noreferrer">
                 https://leetcode.com/einfachManu_/
-              </a>
+              </a>6
             </div>
           </section>
           <div className="print-container">
