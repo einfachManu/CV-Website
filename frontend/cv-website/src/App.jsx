@@ -4,6 +4,9 @@ import ProfilPic from "../src/images/ProfilPicture.jpg"
 import ParticlesComponent from './Screens/ParticleComponent';
 import resume from './assets/Lebenslauf_Manuel_Schwarz.pdf';
 
+import profilePicture from "../src/images/ProfilPicture.jpg"
+import Arrow from "{profilePicture}"
+
 import pythonLogo from "../src/images/javascriptLogo.png";
 import javaScriptLogo from "../src/images/javascriptLogo.png";
 import javaLogo from "../src/images/javascriptLogo.png";
@@ -11,6 +14,7 @@ import reactLogo from "../src/images/javascriptLogo.png";
 import HTMLLogo from "../src/images/javascriptLogo.png";
 import CssLogo from "../src/images/javascriptLogo.png";
 import FigmaLogo from "../src/images/javascriptLogo.png";
+
 
 
 
@@ -161,13 +165,13 @@ function App() {
             {!menuVisible && (
               <div className={`press-me ${animatingOut ? 'animate-out' : ''}`}>
                 <span>Press me</span>
-                <img src='../src/images/Arrow-white.png' className='arrow-white'/>
+                <img src={Arrow} className='arrow-white'/>
               </div>
             )}
             
             <div className="profile-wrapper">
               <img
-                src="../src/images/ProfilPicture.jpg"
+                src={profilePicture}
                 alt="Profile"
                 className="profile-img"
                 onClick={handleProfileClick}
@@ -206,7 +210,7 @@ function App() {
           <div className="profile-header">
             <h1 className="greeting">Hi, i am Manuel !</h1>
             <img
-              src="../src/images/ProfilPicture.jpg"
+              src={profilePicture}
               alt="Profile"
               className="content-profile-img"
             />
@@ -343,7 +347,7 @@ function App() {
                 <span>Python</span>
               </div>
               <div className="tech-item">
-                <img src='../src/images/javascriptLogo.png' className="tech-icon"/>
+                <img src={javaScriptLogo} className="tech-icon"/>
                 <span>JavaScript</span>
               </div>
               <div className="tech-item">
@@ -351,19 +355,19 @@ function App() {
                 <span>Java</span>
               </div>
               <div className="tech-item">
-                <img src='../src/images/reactNative.png' className="tech-icon"/>
+                <img src={javaLogo} className="tech-icon"/>
                 <span>React/React Native</span>
               </div>
               <div className="tech-item">
-                <img src='../src/images/HTML.png' className="tech-icon"/>
+                <img src={HTMLLogo} className="tech-icon"/>
                 <span>HTML</span>
               </div>
               <div className="tech-item">
-                <img src='../src/images/CSS.png' className="tech-icon"/>
+                <img src={CssLogo} className="tech-icon"/>
                 <span>CSS</span>
               </div>
               <div className="tech-item">
-                <img src='../src/images/icons8-figma-50.png' className="tech-icon"/>
+                <img src={FigmaLogo} className="tech-icon"/>
                 <span>Figma</span>
               </div>
             </div>
