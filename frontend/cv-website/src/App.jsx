@@ -382,6 +382,7 @@ function App() {
               <p className="contact-item">
                 <strong>Mobile Number:</strong> +49 160 8740858
               </p>
+              
             </div>
           </section>
           
@@ -398,6 +399,14 @@ function App() {
             <div className="github-link">
               <a href="https://leetcode.com/einfachManu_/" target="_blank" rel="noopener noreferrer">
                 https://leetcode.com/einfachManu_/
+              </a>6
+            </div>
+          </section>
+          <section id="github" className="section">
+            <h2 className="section-title">LinkedIn</h2>
+            <div className="github-link">
+              <a href="https://www.linkedin.com/in/manuel-schwarz-786b3335b" target="_blank" rel="noopener noreferrer">
+              www.linkedin.com/in/manuel-schwarz-786b3335b
               </a>6
             </div>
           </section>
