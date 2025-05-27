@@ -351,7 +351,7 @@ function App() {
                 <span>JavaScript</span>
               </div>
               <div className="tech-item">
-                <img src='../src/images/Java.png' className="tech-icon"/>
+                <img src={javaLogo} className="tech-icon"/>
                 <span>Java</span>
               </div>
               <div className="tech-item">
