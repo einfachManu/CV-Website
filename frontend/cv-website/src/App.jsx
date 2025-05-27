@@ -15,6 +15,9 @@ import HTMLLogo from "../src/images/HTML.png";
 import CssLogo from "../src/images/Css.png";
 import FigmaLogo from "../src/images/icons8-figma-50.png";
 
+import GithubLogo from "../src/images/Github.png";
+import LeetcodeLogo from "../src/images/Leetcode.png";
+import LinkedInLogo from "../src/images/LinkedIn.png";
 
 
 
@@ -387,6 +390,17 @@ function App() {
           </section>
           
           <section id="github" className="section">
+            <img src={LinkedInLogo} className="tech-icon"/>
+            <h2 className="section-title">LinkedIn</h2>
+            <div className="github-link">
+              <a href="https://www.linkedin.com/in/manuel-schwarz-786b3335b" target="_blank" rel="noopener noreferrer">
+              www.linkedin.com/in/manuel-schwarz-786b3335b
+              </a>
+            </div>
+          </section>
+          
+          <section id="github" className="section">
+            <img src={GithubLogo} className="tech-icon" id = "github-gif"/>
             <h2 className="section-title">Github</h2>
             <div className="github-link">
               <a href="https://github.com/einfachManu" target="_blank" rel="noopener noreferrer">
@@ -395,6 +409,7 @@ function App() {
             </div>
           </section>
           <section id="github" className="section">
+            <img src={LeetcodeLogo} className="tech-icon"/>
             <h2 className="section-title">leetcode</h2>
             <div className="github-link">
               <a href="https://leetcode.com/einfachManu_/" target="_blank" rel="noopener noreferrer">
@@ -402,14 +417,7 @@ function App() {
               </a>6
             </div>
           </section>
-          <section id="github" className="section">
-            <h2 className="section-title">LinkedIn</h2>
-            <div className="github-link">
-              <a href="https://www.linkedin.com/in/manuel-schwarz-786b3335b" target="_blank" rel="noopener noreferrer">
-              www.linkedin.com/in/manuel-schwarz-786b3335b
-              </a>6
-            </div>
-          </section>
+         
           <div className="print-container">
             <button 
             className='print-cv'
