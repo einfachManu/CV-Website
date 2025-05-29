@@ -414,7 +414,7 @@ function App() {
             <div className="github-link">
               <a href="https://leetcode.com/einfachManu_/" target="_blank" rel="noopener noreferrer">
                 https://leetcode.com/einfachManu_/
-              </a>6
+              </a>
             </div>
           </section>
          
